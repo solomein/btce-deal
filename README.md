@@ -8,11 +8,13 @@ API wrapper to BTC-E Cryptocoin Trading platform.
   * [Promises A+](http://promisesaplus.com)
   * Automatically converts dates to UNIX timestamps
 
+<hr>
+
 ## Usage
 
 ### Install
 
-```
+```bash
 $ npm install --save btce-deal
 ```
 
@@ -33,21 +35,26 @@ btcePublic.getInfo()
     })
     .error(function (data) {
         // error handling
-    })
+    });
     
 btceTrade.getInfo()
     .then(callback)
-    .error(callback)
+    .error(callback);
 ```
+
+<hr>
+
 ### Public API
-* `.getInfo()`
-* `.getTicker([pairs])`
-* `.getDepth([pairs], [params])`
-* `.getTrades([pairs], [params])`
+* [`.getInfo()`](#get-info)
+* [`.getTicker([pairs])`](#get-ticker)
+* [`.getDepth([pairs], [params])`](#get-depth)
+* [`.getTrades([pairs], [params])`](#get-trades)
 
 **pairs**  
 Type: `Array` or `String`  
 Default: `'btc_usd'`
+
+More information about the parameters can be found in BTC-E Public API [documentation](https://btc-e.com/api/3/documentation).
 
 #### Get info
 ```javascript
@@ -56,7 +63,7 @@ btcePublic.getInfo();
 
 #### Get ticker
 ```javascript
-btcePublic.getTicker()
+btcePublic.getTicker();
 btcePublic.getTicker('btc_usd');
 btcePublic.getTicker(['btc_usd', 'ltc_usd']);
 
@@ -66,7 +73,7 @@ btcePublic.getTicker(['btc_usd', 'ltc_usd']);
 **params**  
 Type: `Object` or `Number`
 ```javascript
-btcePublic.getDepth()
+btcePublic.getDepth();
 btcePublic.getDepth('btc_usd', {limit: 10});
 btcePublic.getDepth(['btc_usd', 'ltc_usd'], 10);
 
@@ -76,43 +83,50 @@ btcePublic.getDepth(['btc_usd', 'ltc_usd'], 10);
 **params**  
 Type: `Object` or `Number`
 ```javascript
-btcePublic.getTrades()
+btcePublic.getTrades();
 btcePublic.getTrades('btc_usd', 2);
 btcePublic.getTrades(['btc_usd', 'ltc_usd'], {limit: 2});
 
 // etc.
 ```
+
+<hr>
+
 ### Trade API
-* `.getInfo()`
-* `.getTransHistory([params])`
-* `.getTradeHistory([params])`
-* `.getActiveOrders([params])`
-* `.trade(params)`
-* `.cancelOrder(params)`
+* [`.getInfo()`](#get-trade-info)
+* [`.getTransHistory([params])`](#get-transaction-history)
+* [`.getTradeHistory([params])`](#get-trade-history)
+* [`.getActiveOrders([params])`](#get-active-orders)
+* [`.trade(params)`](#trade)
+* [`.cancelOrder(params)`](#cancel-order)
+
+More information about the parameters can be found in BTC-E Trade API [documentation](https://btc-e.com/api/documentation).
 
 #### Get trade info
 ```javascript
-btceTrade.getInfo()
+btceTrade.getInfo();
 ```
 
 #### Get transaction history
 ```javascript
-btceTrade.getTransHistory()
+btceTrade.getTransHistory();
 btceTrade.getTransHistory({count: 10, order: 'DESC'});
 
 // etc.
 ```
 #### Get trade history
 ```javascript
-btceTrade.getTradeHistory()
+btceTrade.getTradeHistory();
 btceTrade.getTradeHistory({pair: 'btc_usd', order: 'ASC', since: Date.now()});
 
 // etc.
 ```
 
 #### Get active orders
+**params**  
+Type: `Object` or `String`
 ```javascript
-btceTrade.getActiveOrders()
+btceTrade.getActiveOrders();
 btceTrade.getActiveOrders('btc_usd');
 btceTrade.getActiveOrders({pair: 'btc_usd'});
 
@@ -121,13 +135,15 @@ btceTrade.getActiveOrders({pair: 'btc_usd'});
 
 #### Trade
 ```javascript
-btceTrade.trade({pair: 'btc_usd', type: 'buy', rate: 100.0, amount: 2.0})
-btceTrade.trade({pair: 'ltc_usd', type: 'sell', rate: 15.9, amount: 10.7})
+btceTrade.trade({pair: 'btc_usd', type: 'buy', rate: 100.0, amount: 2.0});
+btceTrade.trade({pair: 'ltc_usd', type: 'sell', rate: 15.9, amount: 10.7});
 
 // etc.
 ```
 
 #### Cancel order
+**params**  
+Type: `Object` or `Number`
 ```javascript
 btceTrade.cancelOrder(343154);
 btceTrade.cancelOrder({order_id: 343154});
