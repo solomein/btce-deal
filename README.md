@@ -99,6 +99,7 @@ btcePublic.getTrades(['btc_usd', 'ltc_usd'], {limit: 2});
 * [`.getActiveOrders([params])`](#get-active-orders)
 * [`.trade(params)`](#trade)
 * [`.cancelOrder(params)`](#cancel-order)
+* [`.getOrderInfo(params)`](#get-order-info)
 
 More information about the parameters can be found in BTC-E Trade API [documentation](https://btc-e.com/api/documentation).
 
@@ -147,6 +148,16 @@ Type: `Object` or `Number`
 ```javascript
 btceTrade.cancelOrder(343154);
 btceTrade.cancelOrder({order_id: 343154});
+
+// etc.
+```
+
+#### Get order info
+**params**  
+Type: `Object` or `Number`
+```javascript
+btceTrade.getOrderInfo(343154);
+btceTrade.getOrderInfo({order_id: 343154});
 
 // etc.
 ```
