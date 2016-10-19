@@ -27,19 +27,28 @@ var BTCE = require('btce-deal');
 var btcePublic = new BTCE.Public(),
     btceTrade = new BTCE.Trade('YOUR-KEY', 'YOUR-SECRET');
 ```
+
+Installing alternative domain
+```javascript
+var host = 'new domain';
+
+var btcePublic = new BTCE.Public(host),
+    btceTrade = new BTCE.Trade('YOUR-KEY', 'YOUR-SECRET', host);
+```
+
 All methods return a `Promise` object ([bluebird](https://github.com/petkaantonov/bluebird) implementation).
 ```javascript
 btcePublic.getInfo()
     .then(function (data) {
         // success handling
     })
-    .error(function (data) {
+    .catch(function (data) {
         // error handling
     });
     
 btceTrade.getInfo()
     .then(callback)
-    .error(callback);
+    .catch(callback);
 ```
 
 <hr>
