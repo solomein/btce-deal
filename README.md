@@ -28,7 +28,7 @@ var btcePublic = new BTCE.Public(),
     btceTrade = new BTCE.Trade('YOUR-KEY', 'YOUR-SECRET');
 ```
 
-Installing alternative domain
+Setting alternative domain
 ```javascript
 var host = 'new domain';
 
@@ -45,7 +45,7 @@ btcePublic.getInfo()
     .catch(function (data) {
         // error handling
     });
-    
+
 btceTrade.getInfo()
     .then(callback)
     .catch(callback);
