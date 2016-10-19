@@ -1,7 +1,7 @@
 {
   "name": "btce-deal",
-  "version": "0.2.2",
-  "description": "BTC-E API Wrapper", 
+  "version": "0.2.3",
+  "description": "BTC-E API Wrapper",
   "author": "Leonid Solomein <leonid.solomein@gmail.com>",
   "repository": {
     "type": "git",
