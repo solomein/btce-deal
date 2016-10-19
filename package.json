@@ -1,6 +1,6 @@
 {
   "name": "btce-deal",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "BTC-E API Wrapper", 
   "author": "Leonid Solomein <leonid.solomein@gmail.com>",
   "repository": {
@@ -25,7 +25,7 @@
     "url": "https://github.com/solomein/btce-deal/issues"
   },
   "dependencies": {
-    "bluebird": "^2.0.6"
+    "bluebird": "^3.4.6"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
